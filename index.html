@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MRC | Education & Programming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #004080;
+      padding: 10px;
+      flex-wrap: wrap;
+      animation: slideDown 1s ease-in-out;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .btn {
+      display: inline-block;
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #0059b3;
+    }
+    footer a {
+      color: #cce5ff;
+    }@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeInUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="MRC.png" alt="MRC Logo" class="logo">
+    <h1>Welcome to MRC</h1>
+    <p>Empowering Education & Programming</p>
+  </header>  <nav>
+    <a href="#about">About Us</a>
+    <a href="#team">Our Team</a>
+    <a href="#companies">Other Companies</a>
+    <a href="#contact">Contact</a>
+  </nav>  <section id="about">
+    <h2>About Us</h2>
+    <p>MRC is a leading company in the fields of education and programming. We strive to build a future where technology enhances learning and creativity.</p>
+  </section>  <section id="team">
+    <h2>Our Team</h2>
+    <div class="team">
+      <div class="card">
+        <h3>CEO</h3>
+        <p>Mostafa Hesham Alatawy</p>
+      </div>
+      <div class="card">
+        <h3>COO</h3>
+        <p>Coming Soon</p>
+      </div>
+      <div class="card">
+        <h3>CFO</h3>
+        <p>Coming Soon</p>
+      </div>
+      <div class="card">
+        <h3>CTO</h3>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+  </section>  <section id="companies">
+    <h2>Other Companies</h2>
+    <ul>
+      <li><strong>MRC SkillUP</strong> – A platform offering various professional courses.</li>
+      <li><strong>MRC Bank</strong> – A virtual banking experience with card creation and management.</li>
+      <li><strong>MRC Media</strong> – A social media platform for sharing photos, videos, and text.</li>
+      <li><strong>MRC News</strong> – A news website featuring articles and updates.</li>
+      <li><strong>عرابيا للذكاء الاصطناعي</strong> – An Arabic platform for chatting with AI and training it on new topics.</li>
+    </ul>
+  </section>  <section id="contact">
+    <h2>Contact With Us</h2>
+    <a href="mailto:mrc.egypt.world@gmail.com" class="btn">Email Us</a>
+    <a href="https://www.facebook.com/share/19N9xo3hpD/?mibextid=qi2Omg" class="btn" target="_blank">Visit Facebook Page</a>
+  </section>  <footer>
+    <p>&copy; 2025 MRC. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
