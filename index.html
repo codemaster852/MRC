@@ -3,860 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MRC - Your Trusted Partner</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MRC - Programming & Teaching Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #333;
-            --text-light: #7f8c8d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
+        /* Custom Styles */
         body {
-            color: var(--text);
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--secondary);
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            color: white;
-            font-weight: 500;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        /* Services Section */
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .service-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .service-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .service-card:hover .service-img img {
-            transform: scale(1.1);
-        }
-        
-        .service-content {
-            padding: 30px;
-        }
-        
-        .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--light);
-        }
-        
-        .about-container {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-        
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-img img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-content h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .about-content p {
-            margin-bottom: 20px;
-        }
-        
-        /* Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .team-member {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .member-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .member-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .member-info {
-            padding: 20px;
-        }
-        
-        .member-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-        
-        .member-info p {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background-color: var(--light);
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            color: white;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--light);
-        }
-        
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            margin-right: 15px;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3::after {
+            font-family: 'Inter', sans-serif; /* Using Inter font as preferred */
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/6366F1/E0E7FF?text=MRC+Tech+Solutions'); /* Placeholder hero image */
+            background-size: cover;
+            background-position: center;
+        }
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Simple animation for section headers */
+        .section-header::after {
             content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--secondary);
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #4F46E5; /* Indigo-600 */
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        
-        .footer-col p {
-            margin-bottom: 15px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #bdc3c7;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 80%;
-                height: calc(100vh - 80px);
-                background-color: var(--primary);
-                transition: all 0.3s ease;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                padding: 30px;
-            }
-            
-            nav ul li {
-                margin: 0 0 20px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero {
-                padding-top: 60px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
+        /* Ensure icons in app cards are a decent size */
+        .app-card i {
+            font-size: 2.5rem; /* Adjust as needed */
         }
     </style>
+    <script>
+        // Tailwind CSS configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#4F46E5', // Indigo-600
+                            light: '#6366F1',   // Indigo-500
+                            dark: '#3730A3',    // Indigo-800
+                        },
+                        secondary: '#10B981', // Emerald-500
+                        accent: '#F59E0B', // Amber-500
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">MRC<span>.</span></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="mainNav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-100 text-gray-800">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Innovative Solutions for Your Business</h1>
-                <p>MRC provides cutting-edge services to help your business grow and thrive in today's competitive market.</p>
-                <a href="#contact" class="btn">Get In Touch</a>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-dark">MRC</a>
+            <div class="space-x-4">
+                <a href="#home" class="text-gray-700 hover:text-primary transition duration-300">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-primary transition duration-300">Services</a>
+                <a href="#apps" class="text-gray-700 hover:text-primary transition duration-300">Our Apps</a> <a href="#about" class="text-gray-700 hover:text-primary transition duration-300">About Us</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
             </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg text-white min-h-screen flex items-center justify-center">
+        <div class="bg-black bg-opacity-50 p-8 md:p-12 rounded-lg text-center max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to MRC</h1>
+            <p class="text-xl md:text-2xl mb-8">Innovative Programming Solutions & Expert Tech Education</p>
+            <a href="#services" class="bg-primary hover:bg-primary-light text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg">Explore Our Services</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of services designed to meet your business needs and exceed your expectations.</p>
-            </div>
-            <div class="services-grid">
-                <!-- In the Services section, add this new service card to the services-grid div: -->
-<div class="services-grid">
-    <!-- Existing services cards... -->
-    
-    <div class="service-card">
-        <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Educational Content & Courses">
-        </div>
-        <div class="service-content">
-            <h3>Educational Content & Courses</h3>
-            <p>Comprehensive educational programs and training courses designed to enhance skills and knowledge in various business domains.</p>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li>Professional development courses</li>
-                <li>Industry-specific training programs</li>
-                <li>Certification preparation</li>
-                <li>E-learning content development</li>
-                <li>Workshops and seminars</li>
-            </ul>
-            <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
-</div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business Consulting">
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-header text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-code text-4xl text-primary mr-4"></i>
+                        <h3 class="text-2xl font-semibold text-primary-dark">Programming Services</h3>
                     </div>
-                    <div class="service-content">
-                        <h3>Business Consulting</h3>
-                        <p>Expert advice to help you navigate complex business challenges and identify growth opportunities.</p>
-                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Market Research">
-                    </div>
-                    <div class="service-content">
-                        <h3>Market Research</h3>
-                        <p>Comprehensive market analysis to help you understand your customers and stay ahead of competitors.</p>
-                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Strategic Planning">
-                    </div>
-                    <div class="service-content">
-                        <h3>Strategic Planning</h3>
-                        <p>Develop clear, actionable strategies to achieve your business objectives and long-term goals.</p>
-                        <a href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="About MRC">
-                </div>
-                <div class="about-content">
-                    <h2>About MRC</h2>
-                    <p>MRC is a leading business solutions provider dedicated to helping companies achieve their full potential. Founded with a vision to transform businesses through innovative strategies and expert guidance, we have grown to become a trusted partner for organizations across various industries.</p>
-                    <p>Our team of seasoned professionals brings together diverse expertise and a shared commitment to excellence. We believe in building long-term relationships with our clients, understanding their unique challenges, and delivering customized solutions that drive measurable results.</p>
-                    <p>At MRC, we combine global best practices with local market knowledge to create strategies that work in the real world. Our approach is collaborative, transparent, and focused on creating sustainable value for our clients.</p>
-                    <a href="#team" class="btn">Meet Our Team</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="section" id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
-                <p>Meet the talented professionals who make MRC a trusted partner for businesses worldwide.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    
-                    <div class="member-info">
-                        <h3>??</h3>
-                        <p>CEO & Founder</p>
-                        <p>Visionary leader with extensive experience in business strategy and development.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                   
-                    <div class="member-info">
-                        <h3> ?? </h3>
-                        <p>Director of Operations</p>
-                        <p>Operations expert with a track record of optimizing business processes.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    
-                    <div class="member-info">
-                        <h3> ?? </h3>
-                        <p>Head of Consulting</p>
-                        <p>Strategic thinker with deep expertise in business transformation.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    
-                    <div class="member-info">
-                        <h3>??</h3>
-                        <p>Marketing Director</p>
-                        <p>Creative marketer with a passion for brand development.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our team to discuss how we can help your business grow and succeed.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Talk About Your Project</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>mrc.egypt.world</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </div>
-                            <div>
-                                <h4>Facebook</h4>
-                                <p>[Your Facebook Page URL]</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4>Working Hours</h4>
-                                <p>Sunday - Thursday: 9:00 AM - 5:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3>MRC</h3>
-                    <p>Innovative business solutions to help you navigate today's complex market challenges and achieve sustainable growth.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61575636181109&locale=ar_AR"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                    <p class="text-gray-600 mb-6">
+                        We deliver cutting-edge software solutions tailored to your business needs. From web applications to complex system integrations, our expert developers are ready to build your vision.
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Custom Software Development</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Web Application Development</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Mobile App Development</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>UI/UX Design & Prototyping</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Cloud Solutions & DevOps</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>E-commerce Platforms</li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Business Consulting</a></li>
-                        <li><a href="#">Market Research</a></li>
-                        <li><a href="#">Strategic Planning</a></li>
-                        <li><a href="#">Financial Advisory</a></li>
-                        <li><a href="#">Digital Transformation</a></li>
+
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-chalkboard-teacher text-4xl text-primary mr-4"></i>
+                        <h3 class="text-2xl font-semibold text-primary-dark">Teaching & Training</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Empower yourself or your team with our comprehensive tech education programs. We offer courses for all levels, from beginners to advanced professionals.
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Full-Stack Development Bootcamps</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Specialized Programming Courses (Python, Java, JavaScript)</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Data Science & Machine Learning Workshops</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Corporate Training Solutions</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Personalized Coaching & Mentorship</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i>Online and On-site Classes</li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-envelope"></i> mrc.egypt.world</p>
-                    <p><i class="fab fa-facebook"></i> https://www.facebook.com/profile.php?id=61575636181109&locale=ar_AR</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps" class="py-16 md:py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="section-header text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Explore Our Apps</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="app-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="mb-4 text-primary">
+                         <i class="fas fa-rocket"></i> </div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">MRC Skill Up</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Enhance your professional abilities with our targeted skill development platform.</p>
+                    <a href="#" target="_blank" class="mt-auto bg-secondary hover:bg-green-600 text-white font-medium py-2 px-5 rounded-lg transition duration-300">Visit App</a>
                 </div>
+
+                <div class="app-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="mb-4 text-primary">
+                        <i class="fas fa-eye"></i> </div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">MRC Vision</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Innovative tools for visual data analysis and insights.</p>
+                    <a href="#" target="_blank" class="mt-auto bg-secondary hover:bg-green-600 text-white font-medium py-2 px-5 rounded-lg transition duration-300">Visit App</a>
+                </div>
+
+                <div class="app-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="mb-4 text-primary">
+                        <i class="fas fa-language"></i> </div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">MRC Languages</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Master new programming languages with interactive lessons and projects.</p>
+                    <a href="#" target="_blank" class="mt-auto bg-secondary hover:bg-green-600 text-white font-medium py-2 px-5 rounded-lg transition duration-300">Visit App</a>
+                </div>
+
+                <div class="app-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="mb-4 text-primary">
+                        <i class="fas fa-comments"></i> </div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">MRC English</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Improve your English language proficiency for tech and business.</p>
+                    <a href="#" target="_blank" class="mt-auto bg-secondary hover:bg-green-600 text-white font-medium py-2 px-5 rounded-lg transition duration-300">Visit App</a>
+                </div>
+
+                <div class="app-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                    <div class="mb-4 text-primary">
+                        <i class="fas fa-chess-knight"></i> </div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">MRC Chess</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">Challenge your strategic thinking with our engaging chess platform.</p>
+                    <a href="#" target="_blank" class="mt-auto bg-secondary hover:bg-green-600 text-white font-medium py-2 px-5 rounded-lg transition duration-300">Visit App</a>
+                </div>
+                 </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-white"> <div class="container mx-auto px-6">
+            <h2 class="section-header text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">About MRC</h2>
+            <div class="max-w-3xl mx-auto text-center text-gray-700 space-y-6">
+                <p class="text-lg">
+                    MRC was founded with a dual passion: to build innovative software that solves real-world problems and to educate the next generation of technology leaders. We believe that technology, when wielded correctly, has the power to transform businesses and empower individuals.
+                </p>
+                <p class="text-lg">
+                    Our team consists of experienced developers, designers, and educators who are dedicated to excellence. We pride ourselves on our client-centric approach for software projects and our practical, hands-on methodology in teaching.
+                </p>
+                <p class="text-lg">
+                    <strong>Our Mission:</strong> To deliver exceptional technological solutions and foster a knowledgeable tech community through high-quality education and mentorship.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 MRC. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-gray-100"> <div class="container mx-auto px-6">
+            <h2 class="section-header text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg"> <p class="text-center text-gray-600 mb-8">
+                    Have a project idea, or interested in our courses? We'd love to hear from you!
+                </p>
+                <form action="#" method="POST">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 font-semibold mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="e.g., Project Inquiry, Course Information" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" required>
+                    </div>
+                    <div class="mb-8">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-primary hover:bg-primary-light text-white font-semibold py-3 px-10 rounded-lg text-lg transition duration-300 shadow-md hover:shadow-lg">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
             </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; <span id="currentYear"></span> MRC. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Designed with MRC</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Simple message for form submission
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual submission for this demo
                 
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
+                // Remove existing message box if any
+                const existingMessageBox = document.getElementById('customMessageBox');
+                if (existingMessageBox) {
+                    existingMessageBox.remove();
                 }
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+
+                // Create a custom message box
+                const messageBox = document.createElement('div');
+                messageBox.id = 'customMessageBox'; // Added ID for easier removal
+                messageBox.style.position = 'fixed';
+                messageBox.style.top = '20px';
+                messageBox.style.left = '50%';
+                messageBox.style.transform = 'translateX(-50%)';
+                messageBox.style.backgroundColor = '#4F46E5'; // primary color
+                messageBox.style.color = 'white';
+                messageBox.style.padding = '15px 25px';
+                messageBox.style.borderRadius = '8px';
+                messageBox.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+                messageBox.style.zIndex = '1000';
+                messageBox.style.opacity = '0';
+                messageBox.style.transition = 'opacity 0.5s ease-in-out';
+                messageBox.textContent = 'Thank you for your message! We will get back to you soon.';
+                document.body.appendChild(messageBox);
+
+                // Animate in
+                setTimeout(() => {
+                    messageBox.style.opacity = '1';
+                }, 10);
+
+                // Animate out and remove
+                setTimeout(() => {
+                    messageBox.style.opacity = '0';
+                    setTimeout(() => {
+                        if (document.body.contains(messageBox)) { // Check if still in DOM
+                           document.body.removeChild(messageBox);
+                        }
+                    }, 500);
+                }, 5000); // Display for 5 seconds
+
+                contactForm.reset(); // Reset form fields
             });
-        });
-        
-        // Sticky Header on Scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        });
+        }
     </script>
+
 </body>
 </html>
